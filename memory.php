@@ -12,13 +12,10 @@
 //                    alert("even");
                     vorgePlaatje = document.getElementById("duck" + vorigeKlik).src;
                     huidigPlaatje = document.getElementById("duck" + teller).src;
-                    if (vorgePlaatje == huidigPlaatje ){
-                        alert("zelfde");
-                        
-                        
-                        
+                    if (vorgePlaatje == huidigPlaatje) {
+                        alert("zelfde plaatje");
                     } else {
-//                        alert(vorgePlaatje);
+                        alert("fout ");
                     }
                 } else {
                     vorigeKlik = teller;
@@ -39,10 +36,25 @@
     <body>
         <table> <tr>
                 <?php
-                for ($x = 1; $x < 5; $x++) {
-                    for ($y = 1; $y < 5; $y++) {
-                        echo "\n<td>    <p>  <img onclick = 'verander($x$y)' src='zwart.png' width=210 height=210 id=duck$x$y /> </p> </td>";
+                $eenden = array();
+                $eenden[] = "eend1.jpg";
+                $eenden[] = "eend2.jpg";
+                $eenden[] = "eend1.jpg";
+                $eenden[] = "eend2.jpg";
+                $eenden[] = "eend5.jpg";
+                $eenden[] = "eend6.jpg";
+                $eenden[] = "eend7.jpg";
+                $eenden[] = "eend8.jpg";
+//                var_dump($eenden);
+                $i = 0;
+                for ($x = 1; $x < 3; $x++) {
+                    for ($y = 1; $y < 3; $y++) {
+                        
+                        echo "\n<td>    <p>  <img onclick = 'verander($x$y)' src='".$eenden[$i]."' width=210 height=210 id=duck$x$y /> </p> </td>";
+                    $i++;
+                        
                     }
+                    
                     echo " </tr> <tr>";
                 }
                 ?>

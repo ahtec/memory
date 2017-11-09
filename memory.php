@@ -9,11 +9,14 @@
                 aantalKlikken = aantalKlikken + 1;
 //                alert(aantalKlikken);
                 if (aantalKlikken % 2 == 0) {
-                    alert("even");
+//                    alert("even");
                     vorgePlaatje = document.getElementById("duck" + vorigeKlik).src;
                     huidigPlaatje = document.getElementById("duck" + teller).src;
                     if (vorgePlaatje == huidigPlaatje ){
                         alert("zelfde");
+                        
+                        
+                        
                     } else {
 //                        alert(vorgePlaatje);
                     }

@@ -5,6 +5,29 @@
         <script>
             var vorigeKlik;
             var aantalKlikken = 0;
+            var eenden = [  "eend1.jpg",
+                "eend2.jpg",
+                "eend3.jpg",
+                "eend4.jpg",
+                "eend5.jpg",
+                "eend6.jpg",
+                "eend7.jpg",
+                "eend8.jpg",
+                "eend9.jpg",
+                "eend1.jpg",
+                "eend2.jpg",
+                "eend3.jpg",
+                "eend4.jpg",
+                "eend5.jpg",
+                "eend6.jpg",
+                "eend7.jpg",
+                "eend8.jpg",
+                "eend9.jpg"]
+                
+                
+               
+                
+            
             function verander(teller) {
                 aantalKlikken = aantalKlikken + 1;
 //                alert(aantalKlikken);
@@ -19,6 +42,8 @@
                     }
                 } else {
                     vorigeKlik = teller;
+                    // dit plaatje moet zichtbaar worden
+                    
                 }
 //                if (teller === 11) {
 //                    document.getElementById("duck11").src = "eend1.jpg";
@@ -36,30 +61,14 @@
     <body>
         <table> <tr>
                 <?php
-                $eenden = array();
-                $eenden[] = "eend1.jpg";
-                $eenden[] = "eend2.jpg";
-                $eenden[] = "eend3.jpg";
-                $eenden[] = "eend4.jpg";
-                $eenden[] = "eend5.jpg";
-                $eenden[] = "eend6.jpg";
-                $eenden[] = "eend7.jpg";
-                $eenden[] = "eend8.jpg";
-                $eenden[] = "eend1.jpg";
-                $eenden[] = "eend2.jpg";
-                $eenden[] = "eend3.jpg";
-                $eenden[] = "eend4.jpg";
-                $eenden[] = "eend5.jpg";
-                $eenden[] = "eend6.jpg";
-                $eenden[] = "eend7.jpg";
-                $eenden[] = "eend8.jpg";
                 
 //                var_dump($eenden);
                 $i = 0;
                 for ($x = 1; $x < 5; $x++) {
                     for ($y = 1; $y < 5; $y++) {
                         
-                        echo "\n<td>    <p>  <img onclick = 'verander($x$y)' src='".$eenden[$i]."' width=50 height=50 id=duck$x$y /> </p> </td>";
+                        echo "\n<td>    <p>  <img onclick = 'verander($x$y)' src='zwart.png' width=50 height=50 id=duck$x$y /> </p> </td>";
+//                        echo "\n<td>    <p>  <img onclick = 'verander($x$y)' src='".$eenden[$i]."' width=50 height=50 id=duck$x$y /> </p> </td>";
 //                        echo "\n<td>    <p>  <img onclick = 'verander($x$y)' src='".$eenden[$i]."' width=50 height=50 id=duck$x$y /> </p> </td>";
                     $i++;
                         

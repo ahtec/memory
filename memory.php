@@ -25,6 +25,12 @@
             var succesvolGrdraaid = [];
             function flip(teller) {
 
+
+
+
+
+
+
                 //                alert(eenden[teller]);
                 console.log(teller);
 //                console.log(eenden[teller]);
@@ -36,6 +42,7 @@
                     //                    huidigPlaatje = document.getElementById("duck" + teller).src;
 
                     if (eenden[teller] == eenden[vorigeKlik]) {
+                        //   goed , plaatjes zijn gelijk
                         //    alert("Gevonden!");
                         document.getElementById("duck" + teller).src = eenden[teller];
                         var storenjanee = succesvolGrdraaid.indexOf(teller);
@@ -60,8 +67,6 @@
                         alert("fout ");
                         document.getElementById("duck" + vorigeKlik).src = 'zwart.png';
 
-
-//                        alert("fout ");
                     }
 
                 } else {
@@ -70,9 +75,11 @@
                     document.getElementById("duck" + teller).src = eenden[teller];
                 }
 
-
                 if (succesvolGrdraaid.length >= eenden.length) {
-                    if (aantalKlikken - eenden.length   <  10 ) {
+                    document.getElementById("duck" + teller).src = eenden[teller];
+//                   document.reload();
+                    console.log(teller);
+                    if (aantalKlikken - eenden.length < 10) {
                         alert("Gefeliciteerd, u heeft een goed geheugen,   u heeft er " + aantalKlikken + " klikken over gedaan. dat is geweldig goed,\nNu beginnen we overnieuw maar nu moeilijker")
                         for (i = 0; i < eenden.length; i++) {
                             //                        eenden.forEach( zetOpZwart() ze)
@@ -81,7 +88,7 @@
                         }
 
                     } else {
-                        alert("Gefeliciteerd, u bent klaar maaaaar ehh , u heeft er " + aantalKlikken + " klikken over gedaan, veel te veel. Weet u zeker dat u niets mankeert? We beginnen nogmaals met dezezelfde set.")
+                        alert("Gefeliciteerd, u bent klaar maaaaar ehh , u heeft er " + aantalKlikken + " klikken over gedaan, VEEL te VEEL. \nWeet u zeker dat u niets mankeert? \nWe beginnen nogmaals met dezelfde set.")
                         for (i = 0; i < eenden.length; i++) {
                             document.getElementById("duck" + i).src = 'zwart.png';
                         }
@@ -90,10 +97,7 @@
                     aantalKlikken = 0;
                 }
 
-
-
             }
-
 
             function shuffleArray(array) {
                 for (var i = array.length - 1; i > 0; i--) {
@@ -106,26 +110,23 @@
         </script>
 
 
-        <title>memory</title>
+        <title>Memory</title>
     </head>
     <body>
-        <table> <tr>
-                <?php
+        <table>
+            <?php
 //                var_dump($eenden);
-                $i = 0;
-                for ($x = 1; $x < 5; $x++) {
-                    for ($y = 1; $y < 5; $y++) {
-
-                        echo "\n<td>    <p>  <img onclick = 'flip($i)' src='zwart.png' width=100 height=100 id=duck$i /> </p> </td>";
-//                        echo "\n<td>    <p>  <img onclick = 'verander($x$y)' src='".$eenden[$i]."' width=50 height=50 id=duck$x$y /> </p> </td>";
-//                        echo "\n<td>    <p>  <img onclick = 'verander($x$y)' src='".$eenden[$i]."' width=50 height=50 id=duck$x$y /> </p> </td>";
-                        $i++;
-                    }
-
-                    echo " </tr> <tr>";
+            $i = 0;
+            for ($x = 1; $x < 5; $x++) {
+                echo "<tr>";
+                for ($y = 1; $y < 5; $y++) {
+                    echo "\n<td>    <p>  <img onclick = 'flip($i)' src='zwart.png' width=120 height=120 id=duck$i /> </p> </td>";
+                    $i++;
                 }
-                ?>
-                </td> </tr>
+                echo " </tr> ";
+            }
+            ?>
+
 
 
     </body>

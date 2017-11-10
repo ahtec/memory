@@ -35,7 +35,7 @@ if (aantalKlikken % 2 == 0) {
 //                    huidigPlaatje = document.getElementById("duck" + teller).src;
 
     if (eenden[teller] == eenden[vorigeKlik]){
-        alert("Gevonden!");
+    //    alert("Gevonden!");
         document.getElementById("duck" + teller).src = eenden[teller];
 
     } else {
@@ -72,7 +72,7 @@ if (aantalKlikken % 2 == 0) {
                 for ($x = 1; $x < 5; $x++) {
                     for ($y = 1; $y < 5; $y++) {
 
-                        echo "\n<td>    <p>  <img onclick = 'flip($i)' src='zwart.png' width=50 height=50 id=duck$i /> </p> </td>";
+                        echo "\n<td>    <p>  <img onclick = 'flip($i)' src='zwart.png' width=100 height=100 id=duck$i /> </p> </td>";
 //                        echo "\n<td>    <p>  <img onclick = 'verander($x$y)' src='".$eenden[$i]."' width=50 height=50 id=duck$x$y /> </p> </td>";
 //                        echo "\n<td>    <p>  <img onclick = 'verander($x$y)' src='".$eenden[$i]."' width=50 height=50 id=duck$x$y /> </p> </td>";
                         $i++;

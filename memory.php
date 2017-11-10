@@ -23,13 +23,14 @@
                 "eend8.jpg"]
 
             var succesvolGrdraaid = [];
+
+            var succes = false;
+
+
             function flip(teller) {
 
-
-
-
-
-
+//                if (succes)
+//                    alert("succes");
 
                 //                alert(eenden[teller]);
                 console.log(teller);
@@ -45,8 +46,8 @@
                         //   goed , plaatjes zijn gelijk
                         //    alert("Gevonden!");
                         document.getElementById("duck" + teller).src = eenden[teller];
-                        var storenjanee = succesvolGrdraaid.indexOf(teller);
-                        console.log(storenjanee);
+//                        var storenjanee = succesvolGrdraaid.indexOf(teller);
+//                        console.log(storenjanee);
 
                         if (succesvolGrdraaid.indexOf(teller) == -1) {
                             succesvolGrdraaid.push(teller);
@@ -60,13 +61,11 @@
                     } else {
                         // fout
 //                            document.getElementById("duck" + teller).src = eenden[teller];
-                        console.log(teller);
-                        console.log(vorigeKlik);
+//                        console.log(teller);
+//                        console.log(vorigeKlik);
 //                            document.getElementById("duck" + vorigeKlik).src = eenden[vorigeKlik];
-
                         alert("fout ");
                         document.getElementById("duck" + vorigeKlik).src = 'zwart.png';
-
                     }
 
                 } else {
@@ -76,15 +75,19 @@
                 }
 
                 if (succesvolGrdraaid.length >= eenden.length) {
-                    document.getElementById("duck" + teller).src = eenden[teller];
+//                    succes = true;
+//                    alert("Klaar");
+//                    document.getElementById("duck" + teller).src = eenden[teller];
+//                    location.reload();
 //                   document.reload();
                     console.log(teller);
-                    if (aantalKlikken - eenden.length < 10) {
+                    if (aantalKlikken - eenden.length < 20) {
                         alert("Gefeliciteerd, u heeft een goed geheugen,   u heeft er " + aantalKlikken + " klikken over gedaan. dat is geweldig goed,\nNu beginnen we overnieuw maar nu moeilijker")
                         for (i = 0; i < eenden.length; i++) {
                             //                        eenden.forEach( zetOpZwart() ze)
                             document.getElementById("duck" + i).src = 'zwart.png';
                             shuffleArray(eenden);
+
                         }
 
                     } else {

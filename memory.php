@@ -81,12 +81,8 @@ if (aantalKlikken % 2 == 0) {
                     echo " </tr> <tr>";
                 }
                 ?>
-                    <!--<p>  <img onclick = "verander(2)" src="zwart.png" width="210" height="210" id="duck2" /> </p>-->
                 </td> </tr>
 
-<!----        <img onclick="verander()" src="eend.png" id=duck width="210" height="210" alt="eend"  loll/>
-            <?php
-// put your code here
-            ?>
+
 </body>
 </html>

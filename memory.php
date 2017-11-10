@@ -5,7 +5,7 @@
         <script>
             var vorigeKlik;
             var aantalKlikken = 0;
-            var eenden = [  "eend1.jpg",
+            var eenden = ["eend1.jpg",  "eend1.jpg",
                 "eend2.jpg",
                 "eend3.jpg",
                 "eend4.jpg",
@@ -26,9 +26,12 @@
                
                 
             
-            function verander(teller) {
+            function flip(teller) {
                 
-                alert(eenden[teller]);
+//                alert(eenden[teller]);
+                console.log(teller);
+                console.log(eenden[teller]);
+                
                 aantalKlikken = aantalKlikken + 1;
 //                alert(aantalKlikken);
                 if (aantalKlikken % 2 == 0) {
@@ -36,9 +39,9 @@
                     vorgePlaatje  = document.getElementById("duck" + vorigeKlik).src;
                     huidigPlaatje = document.getElementById("duck" + teller).src;
                     if (vorgePlaatje == huidigPlaatje) {
-//                        alert("zelfde plaatje");
+                        alert("Gevonden!");
                     } else {
-//                        alert("fout ");
+                        alert("fout ");
                     }
                 } else {
                     vorigeKlik = teller;
@@ -68,7 +71,7 @@
                 for ($x = 1; $x < 5; $x++) {
                     for ($y = 1; $y < 5; $y++) {
                         
-                        echo "\n<td>    <p>  <img onclick = 'verander($i)' src='zwart.png' width=50 height=50 id=duck$i /> </p> </td>";
+                        echo "\n<td>    <p>  <img onclick = 'flip($i)' src='zwart.png' width=50 height=50 id=duck$i /> </p> </td>";
 //                        echo "\n<td>    <p>  <img onclick = 'verander($x$y)' src='".$eenden[$i]."' width=50 height=50 id=duck$x$y /> </p> </td>";
 //                        echo "\n<td>    <p>  <img onclick = 'verander($x$y)' src='".$eenden[$i]."' width=50 height=50 id=duck$x$y /> </p> </td>";
                     $i++;

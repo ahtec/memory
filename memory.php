@@ -25,8 +25,15 @@
             var succesvolGrdraaid = [];
 
             var succes = false;
-            function wachten(){
-             alert("wachten")   
+            function wachten() {
+                for (i = 0; i < eenden.length; i++) {
+                    //                        eenden.forEach( zetOpZwart() ze)
+
+                    document.getElementById("duck" + i).src = eenden[i];
+
+                }
+
+                alert("wachten")
             }
 
             function loaded() {
@@ -76,6 +83,7 @@
                     }
 
                 } else {
+                    // hier de ONEVEN
                     vorigeKlik = teller;
                     //                    alert(eenden[teller]);
                     document.getElementById("duck" + teller).src = eenden[teller];
@@ -83,18 +91,18 @@
 //document.write("HHHHHHHHHHHHHHHHHHH");
                 if (succesvolGrdraaid.length >= eenden.length) {
 //                    alert("Klaar");
-                    document.getElementById("duck" + teller).src = eenden[teller];
-                    var laatste = document.getElementById("duck" + teller)
-                    setTimeout('wachten()',   3000);
+//                    document.getElementById("duck" + teller).src = eenden[teller];
+//                    var laatste = document.getElementById("duck" + teller)
+//                    setTimeout('wachten()',   3000);
 
-                    if (laatste.complete) {
-                        loaded()
-                    } else {
-                        laatste.addEventListener('load', loaded)
-                        laatste.addEventListener('error', function () {
-                            alert('error')
-                        })
-                    }
+//                    if (laatste.complete) {
+//                        loaded()
+//                    } else {
+//                        laatste.addEventListener('load', loaded)
+//                        laatste.addEventListener('error', function () {
+//                            alert('error')
+//                        })
+
 
 //                    var tussen = document.getElementById("duck" + teller);
 
@@ -110,27 +118,30 @@
 
 
                         var meldingText = "Gefeliciteerd, u heeft een goed geheugen,   u heeft er " + aantalKlikken + " klikken over gedaan. dat is geweldig goed,\nNu beginnen we overnieuw maar nu moeilijker";
-                        var x = document.getElementById("melding");
-                        x.innerHTML = meldingText;
+                        alert(meldingText);
+//                        var x = document.getElementById("melding");
+//                        x.innerHTML = meldingText;
                         for (i = 0; i < eenden.length; i++) {
                             //                        eenden.forEach( zetOpZwart() ze)
                             document.getElementById("duck" + i).src = 'zwart.png';
-                            shuffleArray(eenden);
-
+//                            document.getElementById("duck" + i).src = eenden[i];
+//                            document.getElementById("newspelButton")   .disabled = FALSE   ;
                         }
+                        shuffleArray(eenden);
 
                     } else {
                         alert("Gefeliciteerd, u bent klaar maaaaar ehh , u heeft er " + aantalKlikken + " klikken over gedaan, VEEL te VEEL. \nWeet u zeker dat u niets mankeert? \nWe beginnen nogmaals met dezelfde set.")
                         for (i = 0; i < eenden.length; i++) {
                             document.getElementById("duck" + i).src = 'zwart.png';
+//                            document.getElementById("duck" + i).src = eenden[i];
                         }
                     }
                     succes = true;
                     succesvolGrdraaid.length = 0;
                     aantalKlikken = 0;
                 }
-
             }
+
 
             function shuffleArray(array) {
                 for (var i = array.length - 1; i > 0; i--) {
@@ -146,6 +157,8 @@
         <title>Memory</title>
     </head>
     <body>
+
+
         <table>
             <?php
 //                var_dump($eenden);
@@ -160,7 +173,10 @@
                 echo " </tr> ";
             }
             ?>
-            <div id=melding> Memory </div>
+            <div id=melding> </div>
+
+
+<!-----            <button onclick(newSpel() > <input type="submit" value="" name="newspelButton"  />   -->
 
 
 
